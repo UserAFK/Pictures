@@ -1,4 +1,29 @@
+mat-form-field {
+    width: 100%;
+}
 .form{    
     background-color: chocolate;
     border-width: 1px;
+}
+.close-btn{
+    display: flexbox;
+    margin: 0;
+    padding: 0;    
+}
+.comments-list{
+    background-color: chartreuse;
+    margin: 20px;
+}
+.comment{
+    background-color: aqua;
+    border-width: 1px;
+    border-radius: 4px;
+}
+mat-label{
+    font-size: small;
+}
+input.comment-text{
+    background-color: antiquewhite;
+    border-radius: 4px;
+    min-height: 60px;
 }

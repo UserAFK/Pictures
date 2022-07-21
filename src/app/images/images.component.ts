@@ -11,6 +11,7 @@ import { ImagePageComponent } from '../image-page/image-page.component';
 })
 export class ImagesComponent implements OnInit {
   public allImages: ListImageModel[] = [];
+  private dialogRef:any;
 
   constructor(
     private imageService: ImageService,
@@ -23,12 +24,16 @@ export class ImagesComponent implements OnInit {
   }
 
   public OpenInfo(imageId:number): void {
-    let dialogRef = this.matDialog.open(ImagePageComponent, {
-      "width": '600px',
-      "maxHeight": '90vh',
+    if(this.dialogRef !==undefined){
+      this.dialogRef.close();
+    }
+    this.dialogRef = this.matDialog.open(ImagePageComponent, {
+      // "width": '600px',
+      // "maxHeight": '90vh',
       "data": imageId,
       "autoFocus": false
     });
+    
   }
 
 }

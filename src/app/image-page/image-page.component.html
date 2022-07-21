@@ -1,17 +1,23 @@
 <div class="form">
     <h1 mat-dialog-title>Picture id:{{data}}</h1>
     <div mat-dialog-content *ngIf="image">
-        <img src="{{image.url}}" alt="{{image.id}}">
-        <p>This image real ID={{image.id}}</p>
-    </div>
-
-    <div *ngIf="image">
-        <div *ngFor="let comment of image.comments">
-            <li>id:{{comment.id}}|<span>{{comment.text}}</span></li>                        
+        <img src="{{image.url}}" alt="img id {{image.id}}">
+        <div *ngIf="image" class="comments-list">
+            <div *ngFor="let comment of image.comments" class="comment">
+                <li>id:{{comment.id}}|<span>{{comment.text}}</span></li>
+                <input type="date" [ngModel]="comment.date | date:'yyyy-MM-dd'" disabled="" />
+            </div>
+        </div>
+        <div >
+            <mat-form-field>
+                <input matInput [(ngModel)]="name" class="comment-text" placeholder="wright name">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="comment" class="comment-text" placeholder="wright text">
+            </mat-form-field>
+            
         </div>
     </div>
-
-    <div mat-dialog-actions>
-        <button mat-button mat-dialog-close cdkFocusInitial (click)="closeDialog()">Close</button>
-    </div>
+    <button mat-raised-button (click)="sendMessage()">Send message</button>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="closeDialog()">Close</button>
 </div>
