@@ -1,0 +1,17 @@
+<div class="form">
+    <h1 mat-dialog-title>Picture id:{{data}}</h1>
+    <div mat-dialog-content *ngIf="image">
+        <img src="{{image.url}}" alt="{{image.id}}">
+        <p>This image real ID={{image.id}}</p>
+    </div>
+
+    <div *ngIf="image">
+        <div *ngFor="let comment of image.comments">
+            <li>id:{{comment.id}}|<span>{{comment.text}}</span></li>                        
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close cdkFocusInitial (click)="closeDialog()">Close</button>
+    </div>
+</div>

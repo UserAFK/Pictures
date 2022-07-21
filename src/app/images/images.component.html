@@ -1,1 +1,6 @@
-<p>images works!</p>
+<div *ngFor="let item of allImages">
+    <a (click)="OpenInfo(item.id)">
+        <img src="{{item.url}}" alt="{{item.id}}" >
+        Picture id:{{item.id}}
+    </a>
+</div>
