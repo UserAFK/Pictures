@@ -10,11 +10,15 @@
         </div>
         <div >
             <mat-form-field>
-                <input matInput [(ngModel)]="name" class="comment-name" placeholder="Enter your name">
+                <input matInput [(ngModel)]="name" class="comment-name" id="comment-name"
+                placeholder="Enter your name" required>
             </mat-form-field>
+            
             <mat-form-field>
-                <input matInput [(ngModel)]="comment" class="comment-text" placeholder="Wright your comment">
+                <input matInput [(ngModel)]="comment" class="comment-text" id="comment-text"
+                placeholder="Wright your comment" required>
             </mat-form-field>
+            
             
         </div>
     </div>

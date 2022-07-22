@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../Services/image.service';
 import { ListImageModel } from "../Models/ListImageModel";
-import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ImagePageComponent } from '../image-page/image-page.component';
 
 @Component({
@@ -27,13 +27,6 @@ export class ImagesComponent implements OnInit {
     if(this.dialogRef !==undefined){
       this.dialogRef.close();
     }
-    this.dialogRef = this.matDialog.open(ImagePageComponent, {
-      // "width": '600px',
-      // "maxHeight": '90vh',
-      "data": imageId,
-      "autoFocus": false
-    });
-    
+    this.dialogRef = this.matDialog.open(ImagePageComponent, { "data": imageId });    
   }
-
 }
