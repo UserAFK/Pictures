@@ -1,6 +1,8 @@
-<div *ngFor="let item of allImages">
-    <a (click)="OpenInfo(item.id)">
-        <img src="{{item.url}}" alt="{{item.id}}" >
-        Picture id:{{item.id}}
-    </a>
-</div>
+<section class="pictures-list">
+    <li *ngFor="let item of allImages" (click)="OpenInfo(item.id)" class="picture-item">
+        <picture>
+            <img src="{{item.url}}" alt="{{item.id}}">
+        </picture>
+        <div><span>pic id:{{item.id}}</span></div>
+    </li>
+</section>
